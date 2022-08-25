@@ -25,7 +25,7 @@ combined_train=en_train + fr_train
     
     
 tokenizer = Tokenizer(BPE())
-trainer = BpeTrainer(vocab_size=vocab_size, special_tokens=["[PAD]"])
+trainer = BpeTrainer(vocab_size=vocab_size, special_tokens=["[PAD]", "[BOS]"])
 tokenizer.pre_tokenizer = ByteLevel()
 tokenizer.decoder = decoders.ByteLevel()
 
