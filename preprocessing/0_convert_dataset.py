@@ -1,3 +1,8 @@
+# takes  the original text files orig.en and orig.fr
+# removes all sentrence pairs with number of works higher than
+# reduction_len, splits into train and val, saves results to
+# four json files: en_train.json, fr_train.json, en_val.json, fr_val.json
+
 import random
 import json
 import configparser
@@ -5,8 +10,8 @@ import configparser
 config=configparser.ConfigParser()
 config.read('config.txt')
 
-reduction_len=int(config.get('preprocessing', 'reduction_len'))
-N_val=int(config.get('preprocessing', 'N_val'))
+reduction_len=int(config.get('convert_dataset', 'reduction_len'))
+N_val=int(config.get('convert_dataset', 'N_val'))
 
 
 with open('../dataset/UNv1.0/orig.en', 'r') as f:
@@ -54,14 +59,14 @@ for i in range(N_val, len(en_reduced)):
     fr_train.append(fr_reduced[i])    
     
 
-with open('../dataset/UNv1.0/en_train.json', 'w') as f:
+with open('../dataset/UNv1.0/after_step_0/en_train.json', 'w') as f:
     json.dump(en_train, f)
     
-with open('../dataset/UNv1.0/fr_train.json', 'w') as f:
+with open('../dataset/UNv1.0/after_step_0/fr_train.json', 'w') as f:
     json.dump(fr_train, f)
     
-with open('../dataset/UNv1.0/en_val.json', 'w') as f:
+with open('../dataset/UNv1.0/after_step_0/en_val.json', 'w') as f:
     json.dump(en_val, f)
     
-with open('../dataset/UNv1.0/fr_val.json', 'w') as f:
+with open('../dataset/UNv1.0/after_step_0/fr_val.json', 'w') as f:
     json.dump(fr_val, f)
