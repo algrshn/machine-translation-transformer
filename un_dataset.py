@@ -15,8 +15,7 @@ bos_token_id=tokenizer.token_to_id("[BOS]")
 vocab_size=tokenizer.get_vocab_size()
 
 
-
-class tatoeba_Dataset(Dataset):
+class UN_Dataset(Dataset):
     def __init__(self):
         self.num_of_batches = len(en_train)
 
@@ -32,7 +31,7 @@ class tatoeba_Dataset(Dataset):
         assert EN.shape[0] == FR.shape[0]
         
         FR_shifted=np.zeros_like(FR)
-        FR_shifted[:,1:]=FR[:,:-2]
+        FR_shifted[:,1:]=FR[:,:-1]
         FR_shifted[:,0]=bos_token_id
                 
         batch_size=EN.shape[0]

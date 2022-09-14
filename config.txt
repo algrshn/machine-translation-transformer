@@ -1,0 +1,12 @@
+[train]
+num_workers=10
+prefetch_factor=10
+disable_pin_memory=False
+adam_beta1=0.9
+adam_beta2=0.98
+adam_epsilon=1e-9
+warmup_steps=100000
+lr_factor=1
+
+[architecture]
+d_model=512

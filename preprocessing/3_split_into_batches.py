@@ -145,8 +145,8 @@ for i in range(len(en_train_split)):
         en_train_batch_padded.append(en_sentence_padded)
         fr_train_batch_padded.append(fr_sentence_padded)
     
-    EN_batch=np.array(en_train_batch_padded, dtype=float)
-    FR_batch=np.array(fr_train_batch_padded, dtype=float)
+    EN_batch=np.array(en_train_batch_padded, dtype=int)
+    FR_batch=np.array(fr_train_batch_padded, dtype=int)
     
     en_train_output.append(EN_batch)
     fr_train_output.append(FR_batch)        
