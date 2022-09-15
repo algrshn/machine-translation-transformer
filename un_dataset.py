@@ -40,14 +40,14 @@ class UN_Dataset(Dataset):
         fr_batch_sentence_len=FR.shape[1]
         
         EN_onehot=np.zeros((batch_size, en_batch_sentence_len, vocab_size), dtype=np.float32)
-        FR_onehot=np.zeros((batch_size, fr_batch_sentence_len, vocab_size), dtype=np.float32)
+        FR_onehot_shifted=np.zeros((batch_size, fr_batch_sentence_len, vocab_size), dtype=np.float32)
 
         for batch_num in range(batch_size):            
             for pos in range(en_batch_sentence_len):
                 EN_onehot[batch_num, pos, EN[batch_num,pos]]=1
             for pos in range(fr_batch_sentence_len):
-                FR_onehot[batch_num, pos, FR_shifted[batch_num,pos]]=1
+                FR_onehot_shifted[batch_num, pos, FR_shifted[batch_num,pos]]=1
                 
         FR_int=FR.astype(np.int)
             
-        return EN_onehot, FR_onehot, FR_int
+        return EN_onehot, FR_onehot_shifted, FR_int
