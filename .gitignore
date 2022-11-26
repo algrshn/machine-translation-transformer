@@ -1,7 +1,8 @@
 __pycache__/
 .spyproject/
 temp/
-saved_models/
+saved_models/*
+!/saved_models/readme.txt
 dataset/UNv1.0/after_step_0/*.json
 dataset/UNv1.0/after_step_2/*.json
 dataset/UNv1.0/after_step_3/*.json
