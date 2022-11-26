@@ -38,7 +38,6 @@ config=configparser.ConfigParser()
 config.read(os.path.join("run_configs",run_config_file))
 
 device=config.get('inference', 'device')
-device="cpu"
 epoch=int(config.get('inference', 'epoch'))
 max_len=int(config.get('inference', 'max_len'))
 
