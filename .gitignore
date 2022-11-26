@@ -2,9 +2,9 @@ __pycache__/
 .spyproject/
 temp/
 saved_models/
-dataset/UNv1.0/after_step_0/
-dataset/UNv1.0/after_step_2/
-dataset/UNv1.0/after_step_3/
+dataset/UNv1.0/after_step_0/*.json
+dataset/UNv1.0/after_step_2/*.json
+dataset/UNv1.0/after_step_3/*.json
 dataset/UNv1.0/dev_and_test/
 dataset/UNv1.0/*.json
 dataset/UNv1.0/*.pickle
