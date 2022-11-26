@@ -70,10 +70,64 @@
 # print(e-s)
         
 
-def myfunc(n):
-  return lambda a : a * n
+# def myfunc(n):
+#   return lambda a : a * n
 
-mydoubler = myfunc(2)
+# mydoubler = myfunc(2)
 
-print(mydoubler(11))
+# print(mydoubler(11))
 
+# import pickle
+
+# with open('dataset/UNv1.0/en_train.pickle', 'rb') as f:
+#     en_train = pickle.load(f)
+    
+# with open('dataset/UNv1.0/fr_train.pickle', 'rb') as f:
+#     fr_train = pickle.load(f)
+    
+# print(fr_train[-1].shape)
+
+# lst=[0,1,2,3,4]
+
+
+# def adder(*args):
+    
+#     res=0
+#     for arg in args:
+#         res+=arg
+        
+#     return res
+
+
+# y=adder(*lst)
+
+# print(y)
+
+import json
+
+with open("dataset/UNv1.0/after_step_2/en_train.json") as f:
+    en_train_input = json.load(f)
+    
+with open("dataset/UNv1.0/after_step_2/fr_train.json") as f:
+    fr_train_input = json.load(f)
+    
+max_len=99
+min_len=3
+
+count_min=0
+count_max=0
+
+for i in range(len(en_train_input)):
+    
+    if(i % 10000 == 0):
+        print(i)
+    
+    if(len(en_train_input[i])>max_len or len(fr_train_input[i])>max_len):
+       count_max+=1
+       
+    if(len(en_train_input[i])<min_len or len(fr_train_input[i])<min_len):
+       count_min+=1       
+       
+print(count_max)
+print(count_min)    
+    

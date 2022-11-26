@@ -58,8 +58,8 @@ with open('../dataset/UNv1.0/after_step_2/en_train.json', 'w') as f:
 with open('../dataset/UNv1.0/after_step_2/fr_train.json', 'w') as f:
     json.dump(fr_train_output, f)
     
-with open('../dataset/UNv1.0/en_val.json', 'w') as f:
+with open('../dataset/UNv1.0/after_step_2/en_val.json', 'w') as f:
     json.dump(en_val_output, f)
     
-with open('../dataset/UNv1.0/fr_val.json', 'w') as f:
+with open('../dataset/UNv1.0/after_step_2/fr_val.json', 'w') as f:
     json.dump(fr_val_output, f)    

@@ -1,3 +1,5 @@
+import sys
+
 def add_another_sentence_to_batch_or_close_batch(approx_num_of_src_tokens_in_batch, approx_num_of_trg_tokens_in_batch, en_curr_max_len_in_batch, fr_curr_max_len_in_batch, curr_num_of_sentences_in_batch, next_en_sentence, next_fr_sentence):
     
     before=(en_curr_max_len_in_batch*curr_num_of_sentences_in_batch, fr_curr_max_len_in_batch*curr_num_of_sentences_in_batch)
@@ -44,7 +46,17 @@ def get_max_length_in_batch(batch):
     return max_len
 
             
+def display_progress(batch_num, num_of_batches):
     
+    total=num_of_batches-1
+    bar_len = 60
+    filled_len = int(round(bar_len * batch_num / float(total)))
+
+    percents = round(100.0 * batch_num / float(total), 1)
+    bar = '=' * filled_len + '-' * (bar_len - filled_len)
+
+    sys.stdout.write('[%s] %s%s\r' % (bar, percents, '%'))
+    sys.stdout.flush()     
     
     
     

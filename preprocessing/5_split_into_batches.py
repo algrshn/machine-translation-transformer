@@ -22,10 +22,10 @@ approx_num_of_trg_tokens_in_batch=int(config.get('split_into_batches', 'approx_n
 print("\n\nReading the dataset into RAM ...")
 
 
-with open("../dataset/UNv1.0/after_step_2/en_train.json") as f:
+with open("../dataset/UNv1.0/after_step_3/en_train.json") as f:
     en_train_input = json.load(f)
     
-with open("../dataset/UNv1.0/after_step_2/fr_train.json") as f:
+with open("../dataset/UNv1.0/after_step_3/fr_train.json") as f:
     fr_train_input = json.load(f)
 
 print("Done\n\n")

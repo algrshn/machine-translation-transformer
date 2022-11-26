@@ -5,6 +5,10 @@ N_val=50000
 [train_tokenizer]
 vocab_size=37000
 
+[remove_too_long_too_short]
+max_len=99
+min_len=3
+
 [split_into_batches]
-approx_num_of_src_tokens_in_batch=1400
-approx_num_of_trg_tokens_in_batch=2100
+approx_num_of_src_tokens_in_batch=1050
+approx_num_of_trg_tokens_in_batch=1540
