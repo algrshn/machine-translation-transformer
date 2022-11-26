@@ -1,0 +1,1 @@
+Each run will create a subfolder in this folder with the name specified in the config file corresponding to the run. Each subfolder will have files with state dictionaries (model state dictionary, optimizer state dictionary, scheduler state dictionary) corresponding to each epoch. 
