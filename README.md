@@ -1,2 +1,3 @@
-# Coding a transformer model from scratch and training it on UN Parallel EN-FR corpus
-This is a pure training exercise. I wanted to code a transformer as described in [*Attention is All You Need*](https://arxiv.org/pdf/1706.03762.pdf) paper and train it on a high quality parallel corpus. 
+# PyTorch implementation of Transformer from the original paper "Attention Is All You Need".
+I'm planning to provide readme in a few weeks time (by the end of December 2022). Before that you can view detailed instructions on [*my site*]([https://alexgrishin.ai/pytorch_implementaion_of_attention_is_all_you_need]).
+
