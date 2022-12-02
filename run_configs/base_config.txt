@@ -1,6 +1,6 @@
 [train]
 device=cuda:0
-epochs=30
+epochs=42
 resume_training_starting_with_epoch=0
 num_workers=2
 prefetch_factor=10
