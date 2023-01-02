@@ -1,6 +1,7 @@
 # PyTorch implementation of Transformer from scratch from the original paper "Attention Is All You Need".
 
 Originally published on [*my site*](https://alexgrishin.ai/pytorch_implementaion_of_attention_is_all_you_need).
+</br>
 
 This is a PyTorch implementation of Transformer from the original paper [Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf).
 Transformer is coded from scratch in "vanilla" PyTorch without use of PyTorch transformer classes.
