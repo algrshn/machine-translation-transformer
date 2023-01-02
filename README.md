@@ -20,3 +20,9 @@ the area covered by forests is still shrinking, albeit at a slower rate."
 to French ("Malgré les progrès considérables accomplis au cours des 12 dernières années dans la lutte contre le déboisement,
 la superficie des forêts continue de diminuer, mais à un rythme plus lent.").
 
+The model achieves the BLEU score of 0.43 on the validation
+set and exhibits close to human quality of translation on [15 long and convoluted test sentences](https://github.com/algrshn/machine-translation-transformer/blob/main/dataset/UNv1.0/other/my_own_15_sentences.txt)
+(like the one above) I thought up myself.
+With Google Translate English->French translation serving as reference for those 15 sentences,
+the model achieves the BLEU score of 0.57. The model's translations can be viewed [here](https://github.com/algrshn/machine-translation-transformer/blob/main/dataset/UNv1.0/other/my_own_15_sentences_with_my_translation_greedy_search_epoch_14.txt).
+
