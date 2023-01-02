@@ -1,7 +1,7 @@
 # PyTorch implementation of Transformer from scratch from the original paper "Attention Is All You Need".
 
 Originally published on [*my site*](https://alexgrishin.ai/pytorch_implementaion_of_attention_is_all_you_need).
-<br><br>
+<br /><br />
 
 This is a PyTorch implementation of Transformer from the original paper [Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf).
 Transformer is coded from scratch in "vanilla" PyTorch without use of PyTorch transformer classes.
@@ -30,7 +30,7 @@ My another takeaway is that I'm not certain the BLEU scores should always be tru
 I hired a native French speaker to compare quality of translation the model produced after each epoch of training (the model was trained
 for 42 epochs). Although the BLEU score on validation set showed no signs of going down, the expert chose epoch 14 as the best and
 clearly indentified that
-quality started to deteriorate noticeably after 20th epoch and was significantly lower at the end.
+quality started to deteriorate noticeably after 20th epoch and was significantly lower at the end.<br /><br />
 
 ### Preprocessing data
 
