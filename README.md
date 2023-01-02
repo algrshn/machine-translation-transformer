@@ -37,8 +37,8 @@ quality started to deteriorate noticeably after 20th epoch and was significantly
 The original UN English-French parallel corpus consists of roughly 11.4 mln sentence pairs. The corresponding files
 (orig.en and orig.fr) can be downloaded
 from my google drive:
-
-[]()   orig.en - [google drive link](https://drive.google.com/file/d/1Wf3osSE6FV659H5KgM9IBtSd5_39hpFd)<br/> 
-[]()   orig.fr - [google drive link](https://drive.google.com/file/d/1dkMh9xnxEBzcsgBi4jbYeFNmuhLnBOAB)
-
+```
+orig.en - [google drive link](https://drive.google.com/file/d/1Wf3osSE6FV659H5KgM9IBtSd5_39hpFd)<br/> 
+orig.fr - [google drive link](https://drive.google.com/file/d/1dkMh9xnxEBzcsgBi4jbYeFNmuhLnBOAB)
+```
 
