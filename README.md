@@ -26,3 +26,8 @@ set and exhibits close to human quality of translation on [15 long and convolute
 With Google Translate English->French translation serving as reference for those 15 sentences,
 the model achieves the BLEU score of 0.57. The model's translations can be viewed [here](https://github.com/algrshn/machine-translation-transformer/blob/main/dataset/UNv1.0/other/my_own_15_sentences_with_my_translation_greedy_search_epoch_14.txt).
 
+My another takeaway is that I'm not certain the BLEU scores should always be trusted blindly to judge the quality of translation.
+I hired a native French speaker to compare quality of translation the model produced after each epoch of training (the model was trained
+for 42 epochs). Although the BLEU score on validation set showed no signs of going down, the expert chose epoch 14 as the best and
+clearly indentified that
+quality started to deteriorate noticeably after 20th epoch and was significantly lower at the end.
