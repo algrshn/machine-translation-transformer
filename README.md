@@ -2,8 +2,8 @@
 
 Originally published on [*my site*](https://alexgrishin.ai/pytorch_implementaion_of_attention_is_all_you_need).
 
-<p>This is a PyTorch implementation of Transformer from the original paper <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank">
-"Attention Is All You Need"</a>.
+
+<p>This is a PyTorch implementation of Transformer from the original paper [Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf).
 Transformer is coded from scratch in "vanilla" PyTorch without use of PyTorch transformer classes.
 The model was trained on UN English-French parallel corpus (about 8 mln sentence pairs after the original corpus of 11.4 mln pairs
 was cleaned of too long and too short sentences) and can be used for translation of formal,
