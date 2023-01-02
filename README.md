@@ -31,3 +31,9 @@ I hired a native French speaker to compare quality of translation the model prod
 for 42 epochs). Although the BLEU score on validation set showed no signs of going down, the expert chose epoch 14 as the best and
 clearly indentified that
 quality started to deteriorate noticeably after 20th epoch and was significantly lower at the end.
+
+### Preprocessing data
+
+The original UN English-French parallel corpus consists of roughly 11.4 mln sentence pairs. The corresponding files
+(orig.en and orig.fr) can be downloaded
+from my google drive:
