@@ -125,3 +125,39 @@ name of the run config file when initiating a training run:
 $ python3 train.py --conf=base_config.txt
 ```
 Here is how a run config file looks:
+                  <div class="code_box"><code>
+                    [train]<br>
+                    device=cuda:0<br>
+                    epochs=42<br>
+                    resume_training_starting_with_epoch=0<br>
+                    num_workers=2<br>
+                    prefetch_factor=10<br>
+                    disable_pin_memory=False<br>
+                    <div class="yellow_highlight"><span>adam_beta1=0.9</span></div><br>
+                    <div class="yellow_highlight"><span>adam_beta2=0.98</span></div><br>
+                    <div class="yellow_highlight"><span>adam_epsilon=1e-9</span></div><br>
+                    warmup_steps=100000<br>
+                    lr_factor=1.0<br>
+                    <div class="yellow_highlight"><span>P_drop=0.1</span></div><br>
+                    <div class="yellow_highlight"><span>epsilon_ls=0.1</span></div><br>
+                    <div class="yellow_highlight"><span>positional_encoding_wavelength_scale=10000</span></div><br>
+                    masking_minus_inf=-1e+6<br>
+                    folder_to_save_state_dicts=saved_models/run_1.0<br>
+                    <br>
+                    [inference]<br>
+                    device=cuda:1<br>
+                    epoch=14<br>
+                    inference_method=greedy_search<br>
+                    <div class="yellow_highlight"><span>beam_size=4</span></div><br>
+                    <div class="yellow_highlight"><span>length_penalty=0.6</span></div><br>
+                    max_len=99<br>
+                    <br>
+                    [architecture]<br>
+                    <div class="yellow_highlight"><span>N=6</span></div><br>
+                    <div class="yellow_highlight"><span>d_model=512</span></div><br>
+                    <div class="yellow_highlight"><span>d_ff=2048</span></div><br>
+                    <div class="yellow_highlight"><span>h=8</span></div><br>
+                    <div class="yellow_highlight"><span>d_k=64</span></div><br>
+                    <div class="yellow_highlight"><span>d_v=64</span></div><br>
+                    positional_encoding_max_pos=100<br>
+                  </code></div>
