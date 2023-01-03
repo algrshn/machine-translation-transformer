@@ -242,5 +242,7 @@ parameter folder_to_save_state_dicts in the section \[train\] of config accordin
 ### Postprocessing scripts and results
 
 Here is train loss as a function of epoch number:
-
+        <figure>
+            <img src="assets/transformer_train_loss.png" alt="Train loss" class="img-fluid">
+        </figure>
 
