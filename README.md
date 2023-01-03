@@ -71,3 +71,8 @@ going to the validation set and the rest going to the train set. Then it saves r
 four json files: en_train.json, fr_train.json, en_val.json, fr_val.json in the subfolder after_step_0. Note that
 the parameter reduction_len controls the maximum number of words in a sentence, not number of tokens. Tokens are not
 defined yet, as we haven't trained a tokenizer yet and we don't have a vocabulary at this point.
+
+The next step is to train a tokenizer:
+```
+$ python3 1_train_tokenizer.py
+```
