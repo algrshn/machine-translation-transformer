@@ -274,3 +274,26 @@ To translate an arbitrary sentence (make sure the sentence is "UN-like") run:
 $ python3 translate.py --conf=base_config.txt --sentence="English sentence to be translated."
 ```
 
+### How reliable are BLEU scores?
+
+<img src='imgs_for_readme/bleu.svg' alt='Do BLEU scores reliably reflect quality of translation? Should we always chase them?' height="480" />
+
+Do BLEU scores reliably reflect quality of translation? Should we always chase them?
+
+This is my first experience with machine translation, I'm a newbie to the field, and I can't have a formed
+opinion. My very limited experience, however, makes me cast some cautious doubt on trusting BLEU scores blindly.
+
+Here is what I did. I thought up [15 long and convoluted test sentences](https://github.com/algrshn/machine-translation-transformer/blob/main/dataset/UNv1.0/other/my_own_15_sentences.txt), the likes of which are possible to find in UN documents (please,
+disregard that some of them refer to thought up events), and then hired a native French speaker to assess quality
+of model's translation as a function of epoch. The expert was confident that the model performed the best between epochs 10 and 20
+(no signs of that in the BLEU scores on val set as a function of epoch), she designated epoch 14 as the best, and she was confident
+that the quality deteriorated noticeably after epoch 20, degrading substantially towards the end. None of these is seen
+on the BLEU scores plot shown above.
+
+Here is the script that produces translations for these 15 sentences:
+```
+$ python3 translate_my_own_15_sentences.py --conf=base_config.txt
+```
+The best result (corresponds to epoch=14) can be seen [here](https://github.com/algrshn/machine-translation-transformer/blob/main/dataset/UNv1.0/other/my_own_15_sentences_with_my_translation_greedy_search_epoch_14.txt).
+If we treat Google Translate [translations](https://github.com/algrshn/machine-translation-transformer/blob/main/dataset/UNv1.0/other/google_fr_translation_of_my_own_15_sentences.txt)
+of these 15 sentences as ground truth, the model achieves the BLEU score **0.57**.
