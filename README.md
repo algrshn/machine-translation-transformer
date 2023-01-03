@@ -64,3 +64,10 @@ I'll go through different sections of the config file as I describe what differe
 ```
 $ python3 0_convert_dataset.py
 ```
+This step takes  the original text files orig.en and orig.fr as input,
+removes all sentrence pairs with number of words higher than
+reduction_len (parameter in the section \[convert_dataset\]), splits into train and validation sets with N_val pairs
+going to the validation set and the rest going to the train set. Then it saves results to
+four json files: en_train.json, fr_train.json, en_val.json, fr_val.json in the subfolder after_step_0. Note that
+the parameter reduction_len controls the maximum number of words in a sentence, not number of tokens. Tokens are not
+defined yet, as we haven't trained a tokenizer yet and we don't have a vocabulary at this point.
