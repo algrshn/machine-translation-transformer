@@ -245,5 +245,13 @@ Here is train loss as a function of epoch number:
 
 <img src='imgs_for_readme/transformer_train_loss.png' alt='Train loss' height="480" />
 
+To calculate the BLEU score on the validation set run:
+```
+$ python3 bleu_score_on_val_set.py --conf=base_config.txt
+```
+Here is how BLEU score on the validation set (for the first 5000 entries) behaves as a function of epoch number:
+
+<img src='imgs_for_readme/transformer_bleu_scores.png' alt='BLEU scores' height="480" />
+
 
 
