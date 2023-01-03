@@ -41,4 +41,6 @@ from my google drive:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orig.en - [google drive link](https://drive.google.com/file/d/1Wf3osSE6FV659H5KgM9IBtSd5_39hpFd)<br/> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orig.fr - [google drive link](https://drive.google.com/file/d/1dkMh9xnxEBzcsgBi4jbYeFNmuhLnBOAB)
 
+Download and place them in dataset/UNv1.0/ folder.
 
+Configuration file config.txt that controls preprocessing is in preprocessing/ folder. This is how it looks:
