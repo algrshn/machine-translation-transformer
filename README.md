@@ -161,9 +161,27 @@ max_len=99<br>
 ***d_v=64***<br>
 positional_encoding_max_pos=100<br>
 
-Highlighted in yellow are parameters recommended in ["Attention Is All You Need"](https://arxiv.org/pdf/1706.03762.pdf).
+Highlighted in bold italic are parameters recommended in ["Attention Is All You Need"](https://arxiv.org/pdf/1706.03762.pdf).
 When referring to sections, pages, etc below, I'm referring to sections,
 pages, etc from this paper. Six architecture parameters
 (N=6 - number of layers in encoder and decoder, d_model=512 - model size, d_ff=2048 - inner layer dimensionality
 of feed forward networks, h=8 - number of heads in multi-head attention, d_k=64 - dimensionality of keys, d_v=64 - dimensionality of values) are specified as parameters of the base model in the first row of Table 3: Variations
 on the Transformer architecture on page 9 (look at the first 6 columns).
+
+Train parameters P_drop=0.1 (dropout rate) and epsilon_ls=0.1 (label smoothing) are also specified as parameters
+of the base model in the first row of Table 3 in columns 7 and 8.
+
+Adam optimizer parameters (adam_beta1=0.9, adam_beta2=0.98, adam_epsilon=1e-9) are recommended in the
+section 5.3 Optimizer on page 7.
+
+Parameter of positional encoding positional_encoding_wavelength_scale=10000 is implicitly recommended in the
+section 3.5 Positional Encoding on page 6 (see sine and cosine formulas for PE).
+                  
+Inference parameters beam_size=4 and length_penalty=0.6 for beam search (only applicable if inference_method=beam_search)
+are recommended in the section 6.1 Machine Translation on page 8.
+
+The above covers the most critical parameters of the model. The remaining parameters in the config file are mine.
+The recommended number of warmup steps for the optimizer is 4000 (section 5.3 Optimizer, page 7). The authors, however,
+ran training on eight P100 GPUs and could fit 25000 source and 25000 target tokens in a batch
+(section 5.1 Training Data and Batching). I figured, if I include roughly 25 times less data in one step (as I only had one 8Gb GPU),
+then, probably, I need 25 times more warmup steps. Hence my parameter warmup_steps=100000 in the \[train\] section of config.
