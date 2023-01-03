@@ -253,5 +253,24 @@ Here is how BLEU score on the validation set (for the first 5000 entries) behave
 
 <img src='imgs_for_readme/transformer_bleu_scores.png' alt='BLEU scores' height="480" />
 
+To calculate perplexity on the validation set run:
+```
+$ python3 ppl_on_val_set.py --conf=base_config.txt
+```
+Perplexity on the validation set is **2.32**.
 
+Now let's take the first [100 sentences from the validation set](https://github.com/algrshn/machine-translation-transformer/blob/main/dataset/UNv1.0/other/first_100_en_sentences_from_val_set.txt) and produce [their French translations with Google Translate](https://github.com/algrshn/machine-translation-transformer/blob/main/dataset/UNv1.0/other/google_fr_translation_of_first_100_sentences_from_val_set.txt)
+Let's still treat reference translations provided by the UN as the ground
+truth, and let's measure BLEU score of the model translations and BLEU score of Google Translate translations against
+these UN reference translations. Here is the script that does it:
+```
+$ python3 bleu_google_100.py --conf=base_config.txt
+```
+The model's BLEU score is **0.38**, the BLEU score of Google Translate is **0.36**. I only use this
+comparison as a sanity check. Not as a "proof" of superiority of the model against Google Translate (the reverse is true).
+
+To translate an arbitrary sentence (make sure the sentence is "UN-like") run:
+```
+$ python3 translate.py --conf=base_config.txt --sentence="English sentence to be translated."
+```
 
