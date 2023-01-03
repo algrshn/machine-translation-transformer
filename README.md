@@ -46,18 +46,18 @@ Download and place them in dataset/UNv1.0/ folder.
 Configuration file config.txt that controls preprocessing is in preprocessing/ folder. This is how it looks:
 
 
-##### \[convert_dataset\]<br>
+#### \[convert_dataset\]
 reduction_len=40<br>
 N_val=50000<br>
 <br>
-##### \[train_tokenizer\]<br>
+#### \[train_tokenizer\]
 vocab_size=37000<br>
 <br>
-##### \[remove_too_long_too_short\]<br>
+#### \[remove_too_long_too_short\]
 max_len=99<br>
 min_len=3<br>
 <br>
-##### \[split_into_batches\]<br>
+#### \[split_into_batches\]
 approx_num_of_src_tokens_in_batch=1050<br>
 approx_num_of_trg_tokens_in_batch=1540<br>
 
