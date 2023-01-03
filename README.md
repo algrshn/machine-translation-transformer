@@ -233,3 +233,6 @@ training from this point, we set resume_training_starting_with_epoch=8).
 
 My trained model exhibits peak performance at epoch=14. You can download saved state dictionaries for this epoch
 from my google drive:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_dict_e14.pt - [google drive link](https://drive.google.com/file/d/1iA1-07TIkHKSvdJFzgqDhP4YAlGUZMa)
+
