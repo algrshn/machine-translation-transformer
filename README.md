@@ -197,3 +197,39 @@ a correction and I introduced a scaling factor lr_factor, modifying the formula 
 
 Having experimented with different values of lr_factor, I realized lr_factor=1 was the optimal value, so there was no
 need to try to rescale the original optimizer scheduler in the first place.
+
+When running inference, I needed to impose a cutoff on the length of the output sentence. If the model fails to produce
+end of sentence token (PAD token in my implementation) before this cutoff length is reached, it stops at cutoff then.
+This value is controlled by the parameter max_len=99 in the \[inference\] section.
+
+There is no point in re-calculating positional embedding matrix for each batch. It makes more sense to precalculate it
+for the case of longest possible sentence length and then take smaller slices of it when needed. The parameter
+positional_encoding_max_pos=100 in the section \[architecture\] controls the sentence length size of the precalculated
+\positional embedding matrix.
+
+When implementing masked multi-head attention for the decoder we need to set some elements of query-key tensors
+to minus infinity (so softmax, which follows, would set them to zero). The parameter masking_minus_inf=-1e+6 in the
+section \[train\] controls what minus infinity in this context is.
+
+The parameter inference_method in the section \[inference\] accepts one of two possible values: greedy_search or
+beam_search (set to greedy_search in my config). Note, that the parameters beam_size=4 and length_penalty=0.6 in
+the \[inference\] section
+are only used if inference_method is set to beam_search.
+
+The parameters num_workers=2, prefetch_factor=10, disable_pin_memory=False in the section \[train\] control the behavior
+of the dataloader.
+
+The parameter folder_to_save_state_dicts in the section \[train\] controls where state dictionaries will be saved
+on completion of each epoch. Saved files with state dictionaries have names of the form: state_dict_e{epoch_num}.pt,
+and contain model state dictionary, optimizer state dictionary, and scheduler state dictionary.
+
+The parameter device=cuda:0 in the section \[train\] controls what device will be used for training. The parameter
+device=cuda:1 in the section \[inference\] controls what device will be used for inference. The parameter epochs=42
+in the section \[train\] controls the total number of train epochs (no need for such a large number, epochs=20 or lower
+will suffice). The parameter epoch=14 in the section \[inference\] controls what saved model will be used for inference
+(saved model after what epoch). The parameter resume_training_starting_with_epoch in the section \[train\] is used
+if we need to resume training from a particular epoch (if the last saved model was for epoch 7 and now we want to resume
+training from this point, we set resume_training_starting_with_epoch=8).
+
+My trained model exhibits peak performance at epoch=14. You can download saved state dictionaries for this epoch
+from my google drive:
