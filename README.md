@@ -236,3 +236,11 @@ from my google drive:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state_dict_e14.pt - [google drive link](https://drive.google.com/file/d/1iA1-07TIkHKSvdJFzgqDhP4YAlGUZMa_)
 
+You can put the above file in saved_models/run_1.0/ or in a folder of your choice and change the
+parameter folder_to_save_state_dicts in the section \[train\] of config accordingly.
+
+### Postprocessing scripts and results
+
+Here is train loss as a function of epoch number:
+
+
