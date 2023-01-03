@@ -185,3 +185,15 @@ The recommended number of warmup steps for the optimizer is 4000 (section 5.3 Op
 ran training on eight P100 GPUs and could fit 25000 source and 25000 target tokens in a batch
 (section 5.1 Training Data and Batching). I figured, if I include roughly 25 times less data in one step (as I only had one 8Gb GPU),
 then, probably, I need 25 times more warmup steps. Hence my parameter warmup_steps=100000 in the \[train\] section of config.
+
+The authors used dynamic learning rate as a function of step number given by formula (3) on page 7:
+
+lrate = d_model<sup>−0.5</sup> · min(step_num<sup>−0.5</sup>, step_num · warmup_steps<sup>−1.5</sup>)<br><br>
+
+My thinking was that as I use drastically less data for one gradient update, maybe the above formula would require
+a correction and I introduced a scaling factor lr_factor, modifying the formula to:
+
+lrate = lr_factor · d_model<sup>−0.5</sup> · min(step_num<sup>−0.5</sup>, step_num · warmup_steps<sup>−1.5</sup>)<br><br>
+
+Having experimented with different values of lr_factor, I realized lr_factor=1 was the optimal value, so there was no
+need to try to rescale the original optimizer scheduler in the first place.
