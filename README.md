@@ -60,3 +60,7 @@ min_len=3<br>
 approx_num_of_src_tokens_in_batch=1050<br>
 approx_num_of_trg_tokens_in_batch=1540<br>
 
+I'll go through different sections of the config file as I describe what different preprocessing steps do. We start with step 0:
+```
+$ python3 0_convert_dataset.py
+```
