@@ -118,3 +118,10 @@ controlling the approximate number of src/trg tokens in a batch should be chosen
 and resulted in slightly longer training time.
 
 ### Training run and run config file
+
+To train the model we need to create a run config file, put it in the run_configs/ folder, and then supply the
+name of the run config file when initiating a training run:
+```
+$ python3 train.py --conf=base_config.txt
+```
+Here is how a run config file looks:
