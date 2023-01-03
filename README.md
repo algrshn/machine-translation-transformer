@@ -165,6 +165,5 @@ Highlighted in yellow are parameters recommended in ["Attention Is All You Need"
 When referring to sections, pages, etc below, I'm referring to sections,
 pages, etc from this paper. Six architecture parameters
 (N=6 - number of layers in encoder and decoder, d_model=512 - model size, d_ff=2048 - inner layer dimensionality
-of feed forward networks, h=8 - number of heads in multi-head attention, d_k=64 - dimensionality of keys, d_v=64
-- dimensionality of values) are specified as parameters of the base model in the first row of Table 3: Variations
+of feed forward networks, h=8 - number of heads in multi-head attention, d_k=64 - dimensionality of keys, d_v=64 - dimensionality of values) are specified as parameters of the base model in the first row of Table 3: Variations
 on the Transformer architecture on page 9 (look at the first 6 columns).
