@@ -188,12 +188,12 @@ then, probably, I need 25 times more warmup steps. Hence my parameter warmup_ste
 
 The authors used dynamic learning rate as a function of step number given by formula (3) on page 7:
 
-lrate = d_model<sup>−0.5</sup> · min(step_num<sup>−0.5</sup>, step_num · warmup_steps<sup>−1.5</sup>)<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lrate = d_model<sup>−0.5</sup> · min(step_num<sup>−0.5</sup>, step_num · warmup_steps<sup>−1.5</sup>)<br>
 
 My thinking was that as I use drastically less data for one gradient update, maybe the above formula would require
 a correction and I introduced a scaling factor lr_factor, modifying the formula to:
 
-lrate = lr_factor · d_model<sup>−0.5</sup> · min(step_num<sup>−0.5</sup>, step_num · warmup_steps<sup>−1.5</sup>)<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lrate = lr_factor · d_model<sup>−0.5</sup> · min(step_num<sup>−0.5</sup>, step_num · warmup_steps<sup>−1.5</sup>)<br>
 
 Having experimented with different values of lr_factor, I realized lr_factor=1 was the optimal value, so there was no
 need to try to rescale the original optimizer scheduler in the first place.
