@@ -76,3 +76,45 @@ The next step is to train a tokenizer:
 ```
 $ python3 1_train_tokenizer.py
 ```
+This takes train files en_train.json and fr_train.json from the previous step, trains one shared tokenizer
+(with shared vocabulary), and saves it as dataset/UNv1.0/tokenizer.json. It is a Byte-Pair Encoding (BPE) Byte Level
+tokenizer. The vocabulary size is controlled by the parameter vocab_size from the \[train_tokenizer\] section.
+
+Next, we tokenize sentences from all four json files:
+```
+$ python3 2_tokenize.py
+```
+and save the results to the subfolder after_step_2. After this step each json is a list of lists, with
+a sentence being represented as a list of tokens.
+
+Next, we remove sentences which are too long (have more that max_len number of tokens) or too short (have less than min_len
+number of tokens):
+```
+$ python3 3_remove_too_long_too_short.py
+```
+The results are written to the after_step_3 subfolder.
+
+As the dataset has a fair share of duplicates (about 30%), it's important to make sure that we clean the validation set of entries
+present in the train set:
+```
+$ python3 4_clean_val_of_entries_from_train.py
+```
+This script only affects the val set files en_val.json and fr_val.json. The resulting files are written to
+dataset/UNv1.0/.
+
+The last step:
+```
+$ python3 5_split_into_batches.py
+```
+splits the train set into batches. Each batch contains approximately the same number of tokens. Approximate
+number of source tokens is controlled by the parameter approx_num_of_src_tokens_in_batch
+in the section \[split_into_batches\]. The same for target tokens. Approximate number of target tokens in a batch
+is higher than approximate number of source tokens as French translations are generally longer than their English originals.
+The results are saved as en_train.pickle and fr_train.pickle to the dataset/UNv1.0/ folder. Each of this pickle files
+is a list of numpy arrays, with each array representing an English or French part of a batch. During training the order
+in which batches are fed to the model is shuffled every epoch, but the content of each batch stays the same. The parameters
+controlling the approximate number of src/trg tokens in a batch should be chosen depending on GPU memory. For GPU with
+8GB memory I recommend 1500 and 2100 respectively. The parameters I used in my config file (1050 and 1540) are not optimal for 8Gb
+and resulted in slightly longer training time.
+
+### Training run and run config file
