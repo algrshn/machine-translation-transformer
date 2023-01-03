@@ -125,7 +125,7 @@ name of the run config file when initiating a training run:
 $ python3 train.py --conf=base_config.txt
 ```
 Here is how a run config file looks:
-[#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`
+- ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`
                   <div class="code_box"><code>
                     [train]<br>
                     device=cuda:0<br>
