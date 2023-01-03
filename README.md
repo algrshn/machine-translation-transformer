@@ -259,7 +259,7 @@ $ python3 ppl_on_val_set.py --conf=base_config.txt
 ```
 Perplexity on the validation set is **2.32**.
 
-Now let's take the first [100 sentences from the validation set](https://github.com/algrshn/machine-translation-transformer/blob/main/dataset/UNv1.0/other/first_100_en_sentences_from_val_set.txt) and produce [their French translations with Google Translate](https://github.com/algrshn/machine-translation-transformer/blob/main/dataset/UNv1.0/other/google_fr_translation_of_first_100_sentences_from_val_set.txt)
+Now let's take the first [100 sentences from the validation set](https://github.com/algrshn/machine-translation-transformer/blob/main/dataset/UNv1.0/other/first_100_en_sentences_from_val_set.txt) and produce [their French translations with Google Translate](https://github.com/algrshn/machine-translation-transformer/blob/main/dataset/UNv1.0/other/google_fr_translation_of_first_100_sentences_from_val_set.txt).
 Let's still treat reference translations provided by the UN as the ground
 truth, and let's measure BLEU score of the model translations and BLEU score of Google Translate translations against
 these UN reference translations. Here is the script that does it:
