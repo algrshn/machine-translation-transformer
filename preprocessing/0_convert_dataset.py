@@ -1,5 +1,5 @@
 # takes  the original text files orig.en and orig.fr
-# removes all sentrence pairs with number of words higher than
+# removes all sentence pairs with number of words higher than
 # reduction_len, splits into train and val, saves results to
 # four json files: en_train.json, fr_train.json, en_val.json, fr_val.json
 
