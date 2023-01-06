@@ -114,7 +114,7 @@ for i in range(len(log_sentence_perplexities)):
 
 total_perplexity=exp(sum_log_sentence_perplexities/len(log_sentence_perplexities))    
 
-print("\n\n\nValidation set perpexity: {0:4.2f}".format(total_perplexity))
+print("\n\n\nValidation set perplexity: {0:4.2f}".format(total_perplexity))
     
     
     

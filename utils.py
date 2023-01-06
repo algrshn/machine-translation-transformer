@@ -95,7 +95,6 @@ def inference_beam_search(model, EN_onehot, device, vocab_size, bos_token_id, pa
             prob_list=val[:,-1].detach().cpu().numpy().tolist()
             
             
-            
             for k in range(len(pred_list)):
                 pred=pred_list[k]
                 prob=prob_list[k]
@@ -115,13 +114,17 @@ def inference_beam_search(model, EN_onehot, device, vocab_size, bos_token_id, pa
             if(candidate[-1]==pad_token_id):
                 final_candidates.append(candidate)
                 final_candidates_log_prob.append(candidate_log_prob)
-                if(len(final_candidates)==beam_size):
-                    stop_predicting=True
-                    break
+                # if(len(final_candidates)==beam_size):
+                #     stop_predicting=True
+                #     break
             else:
                 candidates.append(candidate)
                 candidates_log_prob.append(candidate_log_prob)
+        if(len(candidates)==0):
+            stop_predicting=True
+            break
                 
+            
     final_candidates_score=[]        
     for k in range(len(final_candidates)):
         candidate_len=len(final_candidates[k])
